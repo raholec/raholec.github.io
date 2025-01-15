@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img id="profile-image" src="" alt="Profile Image" class="profile-img">
+            <h1 id="profile-name"></h1>
+            <p id="profile-bio" class="subtitle"></p>
+        </div>
+        <nav class="social-links">
+            <a id="github-link" href="#" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a id="email-link" href="#" class="hidden">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a id="website-link" href="#" class="hidden">
+                <i class="fas fa-globe"></i> Website
+            </a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="projects">
+            <h2>Projekty</h2>
+            <div id="projects-list" class="projects-grid"></div>
+        </section>
+
+        <section id="skills">
+            <h2>Dovednosti</h2>
+            <div id="skills-list" class="skills"></div>
+        </section>
+
+        <section id="activity">
+            <h2>Aktivita</h2>
+            <div id="activity-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Poslední aktualizace: <span id="last-update"></span></p>
+    </footer>
+
+    <script src="js/github-sync.js"></script>
+</body>
+</html>
