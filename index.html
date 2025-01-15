@@ -28,35 +28,44 @@
 
         .header {
             position: relative;
-            height: 300px;
+            height: 200px;
             overflow: hidden;
+            background: #228B22;
         }
 
-        .forest-bg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        
 
         .avatar-container {
             position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 100px;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             background: white;
             padding: 3px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-container:hover {
+            transform: scale(1.1);
+        }
+
+        .avatar-container svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
         }
 
         .profile-info {
             text-align: center;
-            margin-top: 60px;
             padding: 1rem;
+            margin-top: 1rem;
         }
 
+        /* Ostatní styly zůstávají stejné */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -158,15 +167,51 @@
 </head>
 <body>
     <header class="header">
-        <!-- Les na pozadí -->
-        <svg class="forest-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
-            <!-- SVG obsah z forest-header artefaktu -->
-        </svg>
         
-        <!-- Avatar -->
+        <!-- Avatar Rumcajs -->
         <div class="avatar-container">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <!-- SVG obsah z male-avatar artefaktu -->
+                <!-- Pozadí -->
+                <circle cx="50" cy="50" r="48" fill="#e5e7eb"/>
+                
+                <!-- Tělo - červená košile -->
+                <path d="M35 55 L50 95 L65 55 Q50 60 35 55" fill="#FF0000"/>
+                <path d="M35 55 Q50 60 65 55 L65 75 Q50 80 35 75 Z" fill="#FF0000"/>
+                
+                <!-- Opasek -->
+                <path d="M35 75 Q50 80 65 75 L65 78 Q50 83 35 78 Z" fill="#8B4513"/>
+                
+                <!-- Pistole za pasem -->
+                <path d="M58 75 L63 75 L63 80 L60 82 L58 80 Z" fill="#4A4A4A"/>
+                
+                <!-- Hlava -->
+                <circle cx="50" cy="42" r="20" fill="#FFE4B5"/>
+                
+                <!-- Černé husté vousy -->
+                <path d="M30 45 Q50 75 70 45" fill="#000000"/>
+                <path d="M32 40 Q50 70 68 40" fill="#000000"/>
+                <path d="M35 35 Q50 65 65 35" fill="#000000"/>
+                
+                <!-- Zelený klobouk -->
+                <path d="M25 32 L75 32 L65 22 L35 22 Z" fill="#006400"/>
+                <path d="M30 22 L70 22 L50 12 Z" fill="#006400"/>
+                
+                <!-- Bílé péro za kloboukem -->
+                <path d="M60 18 C65 15 70 5 65 2" stroke="white" stroke-width="3" fill="none"/>
+                
+                <!-- Oči -->
+                <ellipse cx="43" cy="35" rx="3" ry="4" fill="#000"/>
+                <ellipse cx="57" cy="35" rx="3" ry="4" fill="#000"/>
+                
+                <!-- Nos -->
+                <path d="M48 40 L52 38 L52 42 Z" fill="#8B4513"/>
+                
+                <!-- Fajfka -->
+                <path d="M60 45 L65 43 L67 45 L65 47 Z" fill="#8B4513"/>
+                <path d="M65 45 C70 45 72 42 72 40" stroke="#8B4513" stroke-width="2" fill="none"/>
+                <!-- Kouř z fajfky -->
+                <path d="M72 40 C74 38 75 39 76 37" stroke="#ccc" stroke-width="1" fill="none" opacity="0.5"/>
+                <path d="M74 38 C76 36 77 37 78 35" stroke="#ccc" stroke-width="1" fill="none" opacity="0.3"/>
             </svg>
         </div>
     </header>
