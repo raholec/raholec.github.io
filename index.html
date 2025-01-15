@@ -4,16 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3f8061;
+            --bg-color: #f8f9fa;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+
+        .header {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .forest-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-container {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            padding: 3px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info {
+            text-align: center;
+            margin-top: 60px;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        section {
+            background: var(--card-bg);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="profile">
-            <img id="profile-image" src="" alt="Profile Image" class="profile-img">
-            <h1 id="profile-name"></h1>
-            <p id="profile-bio" class="subtitle"></p>
+    <header class="header">
+        <!-- Les na pozadí -->
+        <svg class="forest-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+            <!-- SVG obsah z forest-header artefaktu -->
+        </svg>
+        
+        <!-- Avatar -->
+        <div class="avatar-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <!-- SVG obsah z male-avatar artefaktu -->
+            </svg>
         </div>
+    </header>
+
+    <div class="profile-info">
+        <h1 id="profile-name"></h1>
+        <p id="profile-bio" class="subtitle"></p>
         <nav class="social-links">
             <a id="github-link" href="#" target="_blank">
                 <i class="fab fa-github"></i> GitHub
@@ -25,7 +185,7 @@
                 <i class="fas fa-globe"></i> Website
             </a>
         </nav>
-    </header>
+    </div>
 
     <main class="container">
         <section id="projects">
@@ -45,7 +205,9 @@
     </main>
 
     <footer>
-        <p>Poslední aktualizace: <span id="last-update"></span></p>
+        <div class="footer-content">
+            <p>Poslední aktualizace: <span id="last-update"></span></p>
+        </div>
     </footer>
 
     <script src="js/github-sync.js"></script>
